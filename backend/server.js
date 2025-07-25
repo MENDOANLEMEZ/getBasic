@@ -4,6 +4,9 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+const cors = require('cors');
+app.use(cors());
+
 app.get('/products', (req, res) => {
   const dataPath = path.join(__dirname, 'products.json');
   fs.readFile(dataPath, 'utf8', (err, data) => {
